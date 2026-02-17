@@ -31,7 +31,7 @@ lemlib::Drivetrain drivetrain(
 	&motor_group_1, // Left side motor group
 	&motor_group_2, // Right side motor group
 	12, // Track width
-	lemlib::Omniwheel::NEW_4, // Wheel diameter
+	3.0, // Wheel diameter
 	600, // RPM
 	2 // Drift
 );
@@ -95,7 +95,6 @@ void initialize() {
 		lcd::set_text(1,"Calibrating...");
 		delay(20);
 	}
-	chassis.setPose(0,-8.5,0);
 }
 
 /**
@@ -131,6 +130,7 @@ void autonomous() {
 	lcd::clear();
 	lcd::set_text(1,"Autonomous");
 	// Add autonomous code here
+	intake.move(127);
 }
 
 /**

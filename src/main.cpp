@@ -136,7 +136,7 @@ void autonomous() {
 	chassis.moveToPoint(0,57 - offset,2500);
 	chassis.waitUntilDone();
 	intake.move(0);
-	chassis.turnToHeading(235);
+	chassis.turnToHeading(235,900);
 	chassis.waitUntilDone();
 }
 

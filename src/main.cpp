@@ -6,7 +6,7 @@ using namespace pros;
 
 // Controller
 Controller controller_1(E_CONTROLLER_MASTER);
-int test = 5;
+
 
 // Motor groups
 MotorGroup motor_group_1({-1,-2,-3},MotorGear::blue);

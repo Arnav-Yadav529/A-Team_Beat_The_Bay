@@ -7,7 +7,6 @@ using namespace pros;
 // Controller
 Controller controller_1(E_CONTROLLER_MASTER);
 
-
 // Motor groups
 MotorGroup motor_group_1({-1,-2,-3},MotorGear::blue);
 MotorGroup motor_group_2({4,5,6},MotorGear::blue);
@@ -22,21 +21,21 @@ Motor outtake(9,MotorGear::blue);
 IMU inertial_1(7);
 
 // Descore
-adi::Pneumatics descore('a',false);
+adi::Pneumatics descore('A',false);
 
 /* ----- Autonomous setup ------ */
 
 // Drivetrain
 lemlib::Drivetrain drivetrain(
-	&motor_group_1, // Left side motor group
-	&motor_group_2, // Right side motor group
+	&motor_group_1, // Left motor group
+	&motor_group_2, // Right motor group
 	12, // Track width
 	3.0, // Wheel diameter
 	600, // RPM
 	2 // Drift
 );
 
-// Lateral controller (straight lines)
+// Lateral controller (linear motion)
 lemlib::ControllerSettings lateral_controller(
 	1.5, // kP
 	0, // kI
@@ -49,7 +48,7 @@ lemlib::ControllerSettings lateral_controller(
 	5 // Slew (acceleration)
 );
 
-// Angular controller (turns)
+// Angular controller (angular motion)
 lemlib::ControllerSettings angular_controller(
 	2.0, // kP
 	0, // kI

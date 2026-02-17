@@ -91,7 +91,7 @@ void initialize() {
 	lcd::initialize();
 	// Calibrate chassis
 	chassis.calibrate();
-	while (chassis.is_calibrating()) {
+	while (inertial_1.is_calibrating()) {
 		lcd::set_text(1,"Calibrating...");
 		delay(20);
 	}

@@ -130,8 +130,14 @@ void competition_initialize() {}
 void autonomous() {
 	lcd::clear();
 	lcd::set_text(1,"Autonomous");
-	// Add autonomous code here
+	double offset = 8.5; // Offsets inertial sensor's distance from the front
+	chassis.setPose(0,-offset,0);
 	intake.move(127);
+	chassis.moveToPoint(0,57 - offset,2500);
+	chassis.waitUntilDone();
+	intake.move(0);
+	chassis.turnToHeading(235);
+	chassis.waitUntilDone();
 }
 
 /**

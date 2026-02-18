@@ -125,7 +125,7 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-const double offset = 9.5; // Offset inertial sensor's distance from the front
+const double offset = 9.5; // Offsets inertial sensor's distance from the front
 void autonomous() {
 	lcd::clear();
 	lcd::set_text(1,"Autonomous");

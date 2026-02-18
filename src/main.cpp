@@ -63,9 +63,8 @@ lemlib::ControllerSettings angular_controller(
 
 // Odometry sensors
 lemlib::OdomSensors sensors(
-	/* The first 4 arguments are nullptr because 
-	they are meant for dead wheels, which we don't 
-	have */
+	/* The first 4 arguments are nullptr because they are meant
+	for dead tracking wheels, which we don't have */
 	nullptr,
 	nullptr,
 	nullptr,

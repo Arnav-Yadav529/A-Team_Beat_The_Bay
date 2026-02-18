@@ -126,17 +126,28 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
+const double offset = 9.5; // Offsets inertial sensor's distance from the front
 void autonomous() {
 	lcd::clear();
 	lcd::set_text(1,"Autonomous");
-	double offset = 8.5; // Offsets inertial sensor's distance from the front
 	chassis.setPose(0,-offset,0);
 	intake.move(127);
 	chassis.moveToPoint(0,57 - offset,2500);
 	chassis.waitUntilDone();
 	intake.move(0);
-	chassis.turnToHeading(235,900);
+	chassis.moveToPoint(0,26 - offset,2000);
 	chassis.waitUntilDone();
+	chassis.turnToHeading(90,1200);
+	chassis.waitUntilDone();
+	chassis.moveToPoint(35 - offset,26 - offset,2000);
+	chassis.waitUntilDone();
+	chassis.turnToHeading(0,1200);
+	chassis.waitUntilDone();
+	chassis.moveToPoint(35 - offset,49 - offset,2000);
+	chassis.waitUntilDone();
+	outtake.move(127);
+	delay(1500);
+	outtake.move(0);
 }
 
 /**

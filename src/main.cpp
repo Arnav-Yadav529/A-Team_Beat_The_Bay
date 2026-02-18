@@ -138,11 +138,11 @@ void autonomous() {
 	chassis.waitUntilDone();
 	chassis.turnToHeading(90,1200);
 	chassis.waitUntilDone();
-	chassis.moveToPoint(35 - offset,26 - offset,2000);
+	chassis.moveToPoint(-35 + offset,26 - offset,2000);
 	chassis.waitUntilDone();
 	chassis.turnToHeading(0,1200);
 	chassis.waitUntilDone();
-	chassis.moveToPoint(35 - offset,49 - offset,2000);
+	chassis.moveToPoint(-35 + offset,49 - offset,2000);
 	chassis.waitUntilDone();
 	outtake.move(127);
 	delay(1500);

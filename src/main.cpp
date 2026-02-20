@@ -170,7 +170,7 @@ void autonomous() {
 
 void line() {
 	chassis.setPose(0,0 - offset,0);
-	chassis.moveToPoint(0,24 - offset,2000);
+	chassis.moveToPoint(0,24 - offset,1500);
 }
 
 void turn() {

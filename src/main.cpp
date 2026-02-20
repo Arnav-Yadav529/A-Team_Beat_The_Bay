@@ -40,9 +40,9 @@ lemlib::Drivetrain drivetrain(
 
 // Lateral controller (linear motion)
 lemlib::ControllerSettings lateral_controller(
-	1.5, // kP
+	0, // kP
 	0, // kI
-	8, // kD
+	0, // kD
 	3, // Anti-windup (counteracts kI)
 	1, // Small error
 	100, // Small time
@@ -53,9 +53,9 @@ lemlib::ControllerSettings lateral_controller(
 
 // Angular controller (angular motion)
 lemlib::ControllerSettings angular_controller(
-	2.0, // kP
+	0, // kP
 	0, // kI
-	15, // kD
+	0, // kD
 	3, // Anti-windup (counteracts kI)
 	1, // Small error
 	100, // Small time
@@ -130,6 +130,7 @@ void competition_initialize() {}
  */
 const double offset = 9.5; // Offsets inertial sensor's distance from the front
 void autonomous() {
+	/*
 	lcd::clear();
 	lcd::set_text(1,"Autonomous");
 	chassis.setPose(0,-offset,0);
@@ -150,6 +151,7 @@ void autonomous() {
 	outtake.move(127);
 	delay(1500);
 	outtake.move(0);
+	*/
 }
 
 /**
@@ -165,11 +167,22 @@ void autonomous() {
  * operator control task will be stopped. Re-enabling the robot will restart the
  * task, not resume it from where it left off.
  */
+
+void line() {
+	chassis.setPose(0,0 - offset,0);
+	chassis.moveToPoint(0,48 - offset,2000);
+}
+
+void turn() {
+	chassis.setPose(0,0 - offset,0);
+	chassis.turnToHeading(90);
+}
  
 void opcontrol() {
 	lcd::clear();
 	lcd::set_text(1,"Opcontrol");
 	while (true) {
+		/*
 		// Instructions for moving robot
 		int back_forth = controller_1.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
 		int left_right = controller_1.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
@@ -208,8 +221,16 @@ void opcontrol() {
 		}
 
 		// Matchloader
-		if (controller_1.get_digital_new_press(DIGITAL_UP)) {
+		if (controller_1.get_digital_new_press(DIGITAL_DOWN)) {
 			matchloader.toggle();
+		}
+		*/
+		if (controller_1.get_digital_new_press(DIGITAL_X)) {
+			line();
+		}
+
+		else if (controller_1.get_digital_new_press(DIGITAL_B)) {
+			turn();
 		}
 
 		delay(20);

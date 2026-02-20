@@ -40,28 +40,28 @@ lemlib::Drivetrain drivetrain(
 
 // Lateral controller (linear motion)
 lemlib::ControllerSettings lateral_controller(
-	0, // kP
+	8.0, // kP
 	0, // kI
-	0, // kD
+	40.0, // kD
 	3, // Anti-windup (counteracts kI)
 	1, // Small error
 	100, // Small time
 	3, // Large error
 	500, // Large time
-	5 // Slew (acceleration)
+	15 // Slew (acceleration)
 );
 
 // Angular controller (angular motion)
 lemlib::ControllerSettings angular_controller(
-	0, // kP
+	1.8, // kP
 	0, // kI
-	0, // kD
+	18.0, // kD
 	3, // Anti-windup (counteracts kI)
 	1, // Small error
 	100, // Small time
 	3, // Large error
 	500, // Large time
-	10 // Slew (acceleration)
+	0 // Slew (acceleration)
 );
 
 // Odometry sensors
@@ -170,7 +170,7 @@ void autonomous() {
 
 void line() {
 	chassis.setPose(0,0 - offset,0);
-	chassis.moveToPoint(0,48 - offset,2000);
+	chassis.moveToPoint(0,24 - offset,2000);
 }
 
 void turn() {

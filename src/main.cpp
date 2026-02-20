@@ -177,7 +177,7 @@ void turn() {
 	chassis.setPose(0,0 - offset,0);
 	chassis.turnToHeading(90,1000);
 }
- 
+
 void opcontrol() {
 	lcd::clear();
 	lcd::set_text(1,"Opcontrol");

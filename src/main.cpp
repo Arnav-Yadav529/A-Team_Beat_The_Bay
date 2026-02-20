@@ -175,7 +175,7 @@ void line() {
 
 void turn() {
 	chassis.setPose(0,0 - offset,0);
-	chassis.turnToHeading(90);
+	chassis.turnToHeading(90,1000);
 }
  
 void opcontrol() {

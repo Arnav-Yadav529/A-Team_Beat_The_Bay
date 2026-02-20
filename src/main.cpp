@@ -23,6 +23,9 @@ IMU inertial_1(7);
 // Descore
 adi::Pneumatics descore('A',false);
 
+// Matchloader
+adi::Pneumatics matchloader('B',false);
+
 /* ----- Autonomous setup ------ */
 
 // Drivetrain
@@ -202,6 +205,11 @@ void opcontrol() {
 		// Descore
 		if (controller_1.get_digital_new_press(DIGITAL_UP)) {
 			descore.toggle();
+		}
+
+		// Matchloader
+		if (controller_1.get_digital_new_press(DIGITAL_UP)) {
+			matchloader.toggle();
 		}
 
 		delay(20);

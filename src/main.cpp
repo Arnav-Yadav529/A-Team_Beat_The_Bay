@@ -15,7 +15,7 @@ MotorGroup motor_group_2({4,5,6},MotorGear::blue);
 Motor intake(8,MotorGear::blue);
 
 // Outtake
-Motor outtake(9,MotorGear::blue);
+Motor outtake(-9,MotorGear::blue);
 
 // Inertial sensor
 IMU inertial_1(7);
@@ -204,11 +204,11 @@ void opcontrol() {
 
 		// Outtake
 		if (controller_1.get_digital(DIGITAL_L1)) {
-			outtake.move(-127);
+			outtake.move(127);
 		}
 
 		else if (controller_1.get_digital(DIGITAL_L2)) {
-			outtake.move(127);
+			outtake.move(-127);
 		}
 
 		else {

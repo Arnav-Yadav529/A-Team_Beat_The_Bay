@@ -40,7 +40,7 @@ lemlib::Drivetrain drivetrain(
 
 // Lateral controller (linear motion)
 lemlib::ControllerSettings lateral_controller(
-	8.0, // kP
+	13.5, // kP
 	0, // kI
 	40.0, // kD
 	3, // Anti-windup (counteracts kI)
@@ -169,8 +169,8 @@ void autonomous() {
  */
 
 void line() {
-	chassis.setPose(0,0 - offset,0);
-	chassis.moveToPoint(0,24 - offset,1500);
+	chassis.setPose(0,0,0);
+	chassis.moveToPoint(0,24,1500);
 }
 
 void turn() {

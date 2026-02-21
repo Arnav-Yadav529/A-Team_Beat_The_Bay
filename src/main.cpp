@@ -204,11 +204,11 @@ void opcontrol() {
 
 		// Outtake
 		if (controller_1.get_digital(DIGITAL_L1)) {
-			outtake.move(127);
+			outtake.move(-127);
 		}
 
 		else if (controller_1.get_digital(DIGITAL_L2)) {
-			outtake.move(-127);
+			outtake.move(127);
 		}
 
 		else {

@@ -1,0 +1,8 @@
+# Ignore local VS Code settings and VEX extension caches
+.vscode/
+build/
+bin/
+
+# Ignore system files
+.DS_Store
+Thumbs.db

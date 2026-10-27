@@ -54,17 +54,17 @@ while True:
         rmotors.spin(REVERSE, abs(left_right)/2, PERCENT)
 
     # Intake
-    if (intake_in):
-        intake.spin(REVERSE, 60, PERCENT)
+    # if (intake_in):
+    #     intake.spin(REVERSE, 60, PERCENT)
 
-    elif (intake_out):
-        intake.spin(FORWARD, 60, PERCENT)
+    # elif (intake_out):
+    #     intake.spin(FORWARD, 60, PERCENT)
 
     # Safety block
     else:
         lmotors.stop()
         rmotors.stop()
-        intake.stop()
+        # intake.stop()
     
     # Make sure CPU doesn't overload
     wait(20,MSEC)

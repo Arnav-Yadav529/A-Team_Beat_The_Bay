@@ -53,17 +53,22 @@ while True:
         lmotors.spin(FORWARD, abs(left_right)/2, PERCENT)
         rmotors.spin(REVERSE, abs(left_right)/2, PERCENT)
 
-    # Intake
-    if (intake_in):
-        intake.spin(REVERSE, 80, PERCENT)
-
-    elif (intake_out):
-        intake.spin(FORWARD, 80, PERCENT)
-
     # Safety block
     else:
         lmotors.stop()
         rmotors.stop()
+
+    # Intake
+    if (intake_in):
+        intake.spin(REVERSE, 80, PERCENT)
+        print("poopoo")
+
+    elif (intake_out):
+        intake.spin(FORWARD, 80, PERCENT)
+        print("pp")
+
+    # Safety block
+    else:
         intake.stop()
     
     # Make sure CPU doesn't overload
